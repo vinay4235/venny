@@ -1,0 +1,1167 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;500;600&display=swap');
+
+/* =========================
+   RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Montserrat", sans-serif;
+    min-height: 100vh;
+    background: #08030a;
+    color: white;
+    overflow-x: hidden;
+}
+
+/* =========================
+   BACKGROUND
+========================= */
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+
+    background:
+        radial-gradient(
+            circle at 20% 20%,
+            rgba(255, 0, 100, 0.18),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 80% 80%,
+            rgba(255, 50, 150, 0.15),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 50% 50%,
+            rgba(150, 0, 80, 0.12),
+            transparent 40%
+        );
+
+    pointer-events: none;
+    z-index: -2;
+}
+
+/* =========================
+   STARS
+========================= */
+
+.stars {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.star {
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    background: white;
+    border-radius: 50%;
+
+    animation:
+        twinkle 2s infinite alternate;
+}
+
+@keyframes twinkle {
+    from {
+        opacity: 0.2;
+        transform: scale(0.7);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1.4);
+    }
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 30px;
+    position: relative;
+}
+
+.hero-content {
+    max-width: 900px;
+    animation: fadeUp 1.5s ease;
+}
+
+.small-text {
+    font-family: "Montserrat", sans-serif;
+    font-size: 15px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: #ff9bc4;
+    margin-bottom: 25px;
+    font-weight: 500;
+}
+
+/* Romantic Main Heading */
+
+.hero h1 {
+    font-family: "Great Vibes", cursive;
+    font-size: clamp(65px, 11vw, 135px);
+    line-height: 0.95;
+    font-weight: 700;
+
+    background:
+        linear-gradient(
+            90deg,
+            #fff,
+            #ff9bc4,
+            #ff4f91,
+            #fff
+        );
+
+    background-size: 300%;
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    animation:
+        gradientMove 5s infinite linear;
+}
+
+@keyframes gradientMove {
+    0% {
+        background-position: 0%;
+    }
+
+    100% {
+        background-position: 300%;
+    }
+}
+
+.hero-text {
+    margin: 30px auto;
+    max-width: 600px;
+    color: #ddd;
+    font-size: 18px;
+    line-height: 1.8;
+    font-weight: 300;
+}
+
+/* =========================
+   BUTTON
+========================= */
+
+.start-btn {
+    border: none;
+    padding: 18px 40px;
+    border-radius: 50px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff2f76,
+            #ff75a8
+        );
+
+    color: white;
+    font-family: "Montserrat", sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 10px 40px
+        rgba(255, 47, 118, 0.4);
+
+    transition: 0.4s;
+}
+
+.start-btn:hover {
+    transform:
+        translateY(-5px)
+        scale(1.05);
+
+    box-shadow:
+        0 15px 50px
+        rgba(255, 47, 118, 0.7);
+}
+
+/* =========================
+   SECTIONS
+========================= */
+
+section {
+    padding: 100px 8%;
+}
+
+.section-title {
+    text-align: center;
+    font-family: "Great Vibes", cursive;
+    font-size: clamp(48px, 7vw, 78px);
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.section-subtitle {
+    text-align: center;
+    color: #aaa;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 300;
+    margin-bottom: 60px;
+}
+
+/* =========================
+   GALLERY
+========================= */
+
+.gallery {
+    max-width: 1200px;
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(250px, 1fr)
+        );
+
+    gap: 30px;
+}
+
+.photo-card {
+    position: relative;
+    height: 380px;
+    overflow: hidden;
+
+    border-radius: 25px;
+
+    background: #160a12;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.1);
+
+    transform:
+        translateY(30px);
+
+    opacity: 0;
+
+    transition: 0.7s;
+}
+
+.photo-card.show {
+    transform:
+        translateY(0);
+
+    opacity: 1;
+}
+
+.photo-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.7s;
+}
+
+.photo-card:hover img {
+    transform: scale(1.12);
+}
+
+.photo-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            transparent 40%,
+            rgba(0, 0, 0, 0.8)
+        );
+}
+
+.photo-caption {
+    position: absolute;
+    bottom: 25px;
+    left: 25px;
+    z-index: 2;
+
+    font-family: "Great Vibes", cursive;
+    font-size: 30px;
+    font-weight: 600;
+}
+
+/* =========================
+   STORY
+========================= */
+
+.story-section {
+    position: relative;
+}
+
+.timeline {
+    max-width: 900px;
+    margin: auto;
+    position: relative;
+}
+
+.timeline::before {
+    content: "";
+    position: absolute;
+
+    left: 50%;
+    top: 0;
+    bottom: 0;
+
+    width: 2px;
+
+    background:
+        linear-gradient(
+            transparent,
+            #ff4f91,
+            transparent
+        );
+}
+
+.memory {
+    width: 50%;
+    padding: 25px;
+    position: relative;
+}
+
+.memory:nth-child(odd) {
+    left: 0;
+    text-align: right;
+}
+
+.memory:nth-child(even) {
+    left: 50%;
+}
+
+.memory-box {
+    padding: 25px;
+
+    background:
+        rgba(255, 255, 255, 0.05);
+
+    backdrop-filter: blur(15px);
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.1);
+
+    border-radius: 20px;
+}
+
+.memory-box h3 {
+    font-family: "Great Vibes", cursive;
+    color: #ff7eaa;
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.memory-box p {
+    font-family: "Montserrat", sans-serif;
+    color: #ccc;
+    line-height: 1.7;
+    font-size: 15px;
+    font-weight: 300;
+}
+
+/* =========================
+   LOVE LETTER
+========================= */
+
+.letter-section {
+    text-align: center;
+    min-height: 800px;
+}
+
+.envelope {
+    width: 330px;
+    height: 220px;
+
+    margin: 80px auto 30px;
+
+    position: relative;
+    cursor: pointer;
+
+    perspective: 1000px;
+}
+
+.envelope-body {
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff4f91,
+            #b91555
+        );
+
+    border-radius: 10px;
+
+    box-shadow:
+        0 30px 70px
+        rgba(255, 30, 110, 0.35);
+}
+
+.envelope::before {
+    content: "";
+    position: absolute;
+
+    z-index: 3;
+
+    top: 0;
+    left: 0;
+
+    border-left:
+        165px solid transparent;
+
+    border-right:
+        165px solid transparent;
+
+    border-top:
+        115px solid #ff77a9;
+
+    transform-origin: top;
+    transition: 0.8s;
+}
+
+.envelope::after {
+    content: "❤️";
+
+    position: absolute;
+
+    z-index: 5;
+
+    left: 50%;
+    top: 50%;
+
+    transform:
+        translate(-50%, -50%);
+
+    font-size: 40px;
+
+    transition: 0.5s;
+}
+
+.envelope.open::before {
+    transform:
+        rotateX(180deg);
+}
+
+.envelope.open::after {
+    opacity: 0;
+}
+
+/* =========================
+   LETTER
+========================= */
+
+.letter {
+    position: absolute;
+
+    width: 290px;
+    min-height: 330px;
+
+    left: 20px;
+    bottom: 20px;
+
+    background: #fff8fb;
+    color: #3a1b28;
+
+    padding: 30px;
+
+    border-radius: 10px;
+
+    text-align: left;
+
+    z-index: 2;
+
+    transition: 1s;
+
+    opacity: 0;
+
+    transform:
+        translateY(80px);
+}
+
+.envelope.open .letter {
+    opacity: 1;
+
+    transform:
+        translateY(-170px);
+}
+
+.letter h2 {
+    font-family: "Great Vibes", cursive;
+    color: #c51c5b;
+    font-size: 34px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.letter p {
+    font-family: "Great Vibes", cursive;
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+/* =========================
+   BIRTHDAY
+========================= */
+
+.birthday {
+    min-height: 70vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+}
+
+.birthday-box {
+    max-width: 900px;
+}
+
+.birthday-box h2 {
+    font-family: "Great Vibes", cursive;
+
+    font-size:
+        clamp(45px, 7vw, 85px);
+
+    font-weight: 700;
+
+    color: #ff7eaa;
+}
+
+.birthday-box > p:not(.small-text) {
+    margin: 30px auto;
+
+    max-width: 700px;
+
+    color: #ccc;
+
+    font-size: 20px;
+    line-height: 1.8;
+
+    font-family: "Montserrat", sans-serif;
+    font-weight: 300;
+}
+
+.final-message {
+    font-family: "Great Vibes", cursive;
+
+    font-size: 42px;
+    font-weight: 600;
+
+    margin-top: 60px;
+}
+
+/* =========================
+   FLOATING HEARTS
+========================= */
+
+.heart {
+    position: fixed;
+
+    bottom: -50px;
+
+    font-size: 20px;
+
+    pointer-events: none;
+
+    animation:
+        floatHeart 6s linear forwards;
+
+    z-index: 100;
+}
+
+@keyframes floatHeart {
+    0% {
+        transform:
+            translateY(0)
+            scale(0.5)
+            rotate(0deg);
+
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 1;
+    }
+
+    100% {
+        transform:
+            translateY(-110vh)
+            scale(1.5)
+            rotate(360deg);
+
+        opacity: 0;
+    }
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    text-align: center;
+
+    padding: 50px 20px;
+
+    color: #777;
+
+    font-family: "Montserrat", sans-serif;
+    font-size: 14px;
+}
+
+footer span {
+    color: #ff4f91;
+}
+
+/* =========================
+   GENERAL ANIMATION
+========================= */
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 700px) {
+
+    section {
+        padding: 80px 5%;
+    }
+
+    .hero {
+        padding: 20px;
+    }
+
+    .hero-text {
+        font-size: 16px;
+    }
+
+    .hero h1 {
+        font-size: clamp(50px, 15vw, 80px);
+    }
+
+    .section-title {
+        font-size: clamp(38px, 12vw, 60px);
+    }
+
+    .timeline::before {
+        left: 10px;
+    }
+
+    .memory,
+    .memory:nth-child(even),
+    .memory:nth-child(odd) {
+
+        width: 100%;
+        left: 0;
+
+        text-align: left;
+
+        padding-left: 35px;
+    }
+
+    .envelope {
+        transform: scale(0.85);
+    }
+
+    .envelope.open .letter {
+        transform:
+            translateY(-160px);
+    }
+
+    .final-message {
+        font-size: 27px;
+    }
+
+    .birthday-box h2 {
+        font-size: 50px;
+    }
+
+    .birthday-box > p:not(.small-text) {
+        font-size: 17px;
+    }
+}
+
+
+/* =========================
+   FULL SCREEN INTRO VIDEO
+========================= */
+
+#introVideoOverlay {
+    position: fixed;
+    inset: 0;
+
+    width: 100vw;
+    height: 100vh;
+
+    z-index: 99999;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #000;
+
+    opacity: 1;
+    visibility: visible;
+
+    transition: opacity 0.9s ease, visibility 0.9s ease;
+}
+
+#introVideoOverlay.intro-hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.intro-video-box {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    overflow: hidden;
+    background: #000;
+}
+
+.intro-video-box video {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+    object-position: center;
+
+    background: #000;
+}
+
+.intro-video-box::after {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(0, 0, 0, 0.08),
+            rgba(0, 0, 0, 0.03) 45%,
+            rgba(0, 0, 0, 0.55)
+        );
+
+    pointer-events: none;
+}
+
+.intro-video-text {
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    bottom: 8%;
+
+    z-index: 2;
+
+    text-align: center;
+
+    pointer-events: none;
+}
+
+.intro-video-text span {
+    display: block;
+
+    font-size: clamp(25px, 3vw, 42px);
+
+    margin-bottom: 8px;
+
+    animation: introHeart 1.2s infinite;
+}
+
+.intro-video-text p {
+    color: white;
+
+    font-family: "Great Vibes", cursive;
+
+    font-size: clamp(28px, 4vw, 52px);
+
+    text-shadow:
+        0 3px 15px rgba(0, 0, 0, 0.9),
+        0 0 25px rgba(255, 79, 145, 0.45);
+}
+
+@keyframes introHeart {
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.18);
+    }
+}
+
+@media (max-width: 700px) {
+    .intro-video-text {
+        bottom: 10%;
+    }
+}
+
+
+/* =========================
+   PHOTO HEART BUTTON
+========================= */
+
+.photo-card {
+    cursor: pointer;
+}
+
+.photo-heart {
+    position: absolute;
+
+    top: 18px;
+    right: 18px;
+
+    z-index: 4;
+
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid rgba(255, 255, 255, 0.28);
+    border-radius: 50%;
+
+    background: rgba(0, 0, 0, 0.42);
+    backdrop-filter: blur(10px);
+
+    color: white;
+    font-size: 22px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.3),
+        0 0 20px rgba(255, 79, 145, 0.2);
+
+    transition: 0.35s ease;
+}
+
+.photo-heart:hover {
+    transform: scale(1.18);
+    background: rgba(255, 47, 118, 0.8);
+    box-shadow:
+        0 8px 30px rgba(255, 47, 118, 0.4),
+        0 0 25px rgba(255, 79, 145, 0.45);
+}
+
+.photo-heart:active {
+    transform: scale(0.95);
+}
+
+/* =========================
+   FULL SCREEN PHOTO VIEWER
+========================= */
+
+body.photo-viewer-open {
+    overflow: hidden;
+}
+
+.photo-viewer {
+    position: fixed;
+    inset: 0;
+
+    z-index: 100000;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 40px;
+
+    background: rgba(0, 0, 0, 0.94);
+    backdrop-filter: blur(14px);
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition:
+        opacity 0.35s ease,
+        visibility 0.35s ease;
+}
+
+.photo-viewer.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.photo-viewer img {
+    max-width: 92vw;
+    max-height: 84vh;
+
+    width: auto;
+    height: auto;
+
+    object-fit: contain;
+
+    border-radius: 18px;
+
+    border: 1px solid rgba(255, 255, 255, 0.18);
+
+    box-shadow:
+        0 25px 90px rgba(0, 0, 0, 0.7),
+        0 0 45px rgba(255, 47, 118, 0.18);
+
+    transform: scale(0.88);
+    transition: transform 0.4s ease;
+}
+
+.photo-viewer.active img {
+    transform: scale(1);
+}
+
+.close-photo {
+    position: absolute;
+
+    top: 22px;
+    right: 25px;
+
+    z-index: 3;
+
+    width: 52px;
+    height: 52px;
+
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.1);
+
+    color: white;
+
+    font-size: 35px;
+    font-weight: 300;
+    line-height: 1;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.close-photo:hover {
+    background: rgba(255, 47, 118, 0.8);
+    transform: rotate(90deg) scale(1.08);
+}
+
+.viewer-caption {
+    position: absolute;
+
+    left: 20px;
+    right: 20px;
+    bottom: 28px;
+
+    text-align: center;
+
+    color: white;
+
+    font-family: "Great Vibes", cursive;
+
+    font-size: clamp(28px, 4vw, 48px);
+
+    text-shadow:
+        0 3px 15px rgba(0, 0, 0, 0.9),
+        0 0 20px rgba(255, 79, 145, 0.3);
+}
+
+@media (max-width: 700px) {
+    .photo-heart {
+        width: 43px;
+        height: 43px;
+
+        top: 12px;
+        right: 12px;
+
+        font-size: 19px;
+    }
+
+    .photo-viewer {
+        padding: 20px;
+    }
+
+    .photo-viewer img {
+        max-width: 96vw;
+        max-height: 78vh;
+
+        border-radius: 12px;
+    }
+
+    .close-photo {
+        top: 15px;
+        right: 15px;
+
+        width: 45px;
+        height: 45px;
+
+        font-size: 30px;
+    }
+
+    .viewer-caption {
+        bottom: 18px;
+    }
+}
+
+
+/* =========================
+   HIDDEN PHOTOS - HEART REVEAL
+========================= */
+
+/* Initially hide the actual photo */
+.photo-card img {
+    opacity: 0;
+    transform: scale(0.88);
+    transition:
+        opacity 0.7s ease,
+        transform 0.7s ease;
+}
+
+/* Hide the caption until the photo is revealed */
+.photo-card .photo-caption {
+    opacity: 0;
+    transform: translateY(12px);
+    transition:
+        opacity 0.6s ease,
+        transform 0.6s ease;
+}
+
+/* Make the heart large and centered while the photo is hidden */
+.photo-card .photo-heart {
+    top: 50%;
+    right: 50%;
+
+    width: 75px;
+    height: 75px;
+
+    transform: translate(50%, -50%);
+
+    font-size: 34px;
+
+    background: rgba(255, 47, 118, 0.18);
+
+    border: 1px solid rgba(255, 155, 196, 0.55);
+
+    box-shadow:
+        0 0 30px rgba(255, 47, 118, 0.35),
+        0 0 70px rgba(255, 79, 145, 0.18);
+
+    animation: revealHeartPulse 1.5s infinite;
+}
+
+.photo-card .photo-heart:hover {
+    transform: translate(50%, -50%) scale(1.12);
+
+    background: rgba(255, 47, 118, 0.75);
+
+    box-shadow:
+        0 0 35px rgba(255, 47, 118, 0.7),
+        0 0 80px rgba(255, 79, 145, 0.35);
+}
+
+/* After clicking ❤️ */
+.photo-card.revealed img {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.photo-card.revealed .photo-caption {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.photo-card.revealed .photo-heart {
+    top: 18px;
+    right: 18px;
+
+    width: 48px;
+    height: 48px;
+
+    transform: none;
+
+    font-size: 22px;
+
+    background: rgba(0, 0, 0, 0.42);
+
+    animation: none;
+}
+
+.photo-card.revealed .photo-heart:hover {
+    transform: scale(1.18);
+    background: rgba(255, 47, 118, 0.8);
+}
+
+@keyframes revealHeartPulse {
+    0%, 100% {
+        transform: translate(50%, -50%) scale(1);
+    }
+
+    50% {
+        transform: translate(50%, -50%) scale(1.12);
+    }
+}
+
+@media (max-width: 700px) {
+    .photo-card .photo-heart {
+        width: 65px;
+        height: 65px;
+        font-size: 29px;
+    }
+
+    .photo-card.revealed .photo-heart {
+        width: 43px;
+        height: 43px;
+        top: 12px;
+        right: 12px;
+        font-size: 19px;
+    }
+}

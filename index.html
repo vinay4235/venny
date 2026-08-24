@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>For My Beautiful Girl ❤️</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         SMALL INTRO VIDEO
+    ========================== -->
+    <div id="introVideoOverlay">
+        <div class="intro-video-box">
+            <video id="introVideo" autoplay muted playsinline>
+                <source src="intro.mp4" type="video/mp4">
+            </video>
+
+            <div class="intro-video-text">
+                <span>❤️</span>
+                <p>A little surprise for you...</p>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Background Music -->
+        <audio id="backgroundMusic"
+            src="Inthandham.mp3"
+            autoplay
+            loop>
+        </audio>
+
+    <!-- =========================
+         STARS BACKGROUND
+    ========================== -->
+
+    <div class="stars" id="stars"></div>
+
+
+    <!-- =========================
+         HERO SECTION
+    ========================== -->
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <p class="small-text">
+                A little surprise for you
+            </p>
+
+            <h1>
+                For My<br>
+                Beautiful Girl ❤️
+            </h1>
+
+            <p class="hero-text">
+                I made something special for you...
+                Not because today is your birthday,
+                but because you deserve something
+                as beautiful as you are.
+            </p>
+
+            <button class="start-btn" onclick="startJourney()">
+                ✨ Open Your Surprise
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         MEMORIES
+    ========================== -->
+
+    <section id="memories">
+
+        <h2 class="section-title">
+            Our Beautiful Memories
+        </h2>
+
+        <p class="section-subtitle">
+            Every picture holds a little piece of my heart ❤️
+        </p>
+
+
+        <div class="gallery">
+
+            <div class="photo-card" tabindex="0">
+
+                <img src="vv.png"
+                     alt="Our Memory">
+
+                <button class="photo-heart" type="button" aria-label="Reveal The Beginning photo">❤️</button>
+
+                <div class="photo-caption">
+                    The Beginning ❤️
+                </div>
+
+            </div>
+
+
+            <div class="photo-card" tabindex="0">
+
+                <img src="venny.jpeg"
+                     alt="Our Memory">
+
+                <button class="photo-heart" type="button" aria-label="Reveal That Beautiful Smile photo">❤️</button>
+
+                <div class="photo-caption">
+                    That Beautiful Smile
+                </div>
+
+            </div>
+
+
+            <div class="photo-card" tabindex="0">
+
+                <img src="vv.jpeg"
+                     alt="Our Memory">
+
+                <button class="photo-heart" type="button" aria-label="Reveal My Favorite Moment photo">❤️</button>
+
+                <div class="photo-caption">
+                    My Favorite Moment
+                </div>
+
+            </div>
+
+
+            <div class="photo-card" tabindex="0">
+
+                <img src="vvy.jpeg"
+                     alt="Our Memory">
+
+                <button class="photo-heart" type="button" aria-label="Reveal Forever Memories photo">❤️</button>
+
+                <div class="photo-caption">
+                    Forever Memories
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         OUR STORY
+    ========================== -->
+
+    <section class="story-section">
+
+        <h2 class="section-title">
+            Our Little Story
+        </h2>
+
+        <p class="section-subtitle">
+            Some moments are impossible to forget.
+        </p>
+
+
+        <div class="timeline">
+
+            <div class="memory">
+
+                <div class="memory-box">
+
+                    <h3>
+                        The Day We Met
+                    </h3>
+
+                    <p>
+                        Somehow, among millions of people,
+                        life decided that our paths should cross.
+                        And I'm forever grateful for that.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="memory">
+
+                <div class="memory-box">
+
+                    <h3>
+                        The First Smile
+                    </h3>
+
+                    <p>
+                        Your smile became one of my favorite
+                        things in this world.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="memory">
+
+                <div class="memory-box">
+
+                    <h3>
+                        The Memories
+                    </h3>
+
+                    <p>
+                        Every conversation, every laugh,
+                        every little moment became something
+                        I wanted to keep forever.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="memory">
+
+                <div class="memory-box">
+
+                    <h3>
+                        Today ❤️
+                    </h3>
+
+                    <p>
+                        And here we are...
+                        creating another beautiful memory
+                        together.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         LOVE LETTER
+    ========================== -->
+
+    <section class="letter-section">
+
+        <h2 class="section-title">
+            I Wrote Something For You 💌
+        </h2>
+
+        <p class="section-subtitle">
+            Click the envelope...
+        </p>
+
+
+        <div class="envelope"
+             id="envelope"
+             onclick="openLetter()">
+
+            <div class="envelope-body"></div>
+
+
+            <div class="letter">
+
+                <h2>
+                    My Love ❤️
+                </h2>
+
+                <p>
+
+                    Happy Birthday to the most beautiful
+                    person in my life.
+
+                    <br><br>
+
+                    I don't know if words can ever explain
+                    how special you are to me.
+
+                    <br><br>
+
+                    You make ordinary days feel special,
+                    simple moments feel magical,
+                    and my life a little brighter.
+
+                    <br><br>
+
+                    Thank you for being you.
+
+                    <br><br>
+
+                    I hope this new year of your life brings
+                    you everything your heart wishes for.
+
+                    <br><br>
+
+                    And I hope I get to be there beside you
+                    for many more birthdays, memories,
+                    laughs and adventures.
+
+                    <br><br>
+
+                    No matter where life takes us,
+                    one thing will always remain...
+
+                    <br><br>
+
+                    <strong>
+                        You will always have a special place
+                        in my heart. ❤️
+                    </strong>
+
+                    <br><br>
+
+                    Forever yours,
+
+                    <br>
+
+                    <strong>
+                        Nanna ❤️
+                    </strong>
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         BIRTHDAY SECTION
+    ========================== -->
+
+    <section class="birthday">
+
+        <div class="birthday-box">
+
+            <p class="small-text">
+                One More Thing...
+            </p>
+
+            <h2>
+                Happy Birthday ❤️
+            </h2>
+
+            <p>
+                May your smile stay this beautiful,
+                your heart stay this pure,
+                and your life be filled with
+                everything you've ever dreamed of.
+            </p>
+
+            <div class="final-message">
+                I'd choose you in every lifetime. ❤️
+            </div>
+
+        </div>
+
+    </section>
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer>
+        <span>
+            I Love You Vennamma ❤️
+        </span>
+
+    </footer>
+
+
+
+    <!-- =========================
+         PHOTO VIEWER
+    ========================== -->
+    <div id="photoViewer" class="photo-viewer" aria-hidden="true">
+        <button id="closePhoto" class="close-photo" type="button" aria-label="Close photo">×</button>
+
+        <img id="viewerImage" src="" alt="Opened memory">
+
+        <div id="viewerCaption" class="viewer-caption"></div>
+    </div>
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+
+    <script>
+
+        /* CREATE STARS */
+
+        const starsContainer =
+            document.getElementById("stars");
+
+        for (let i = 0; i < 150; i++) {
+
+            const star =
+                document.createElement("div");
+
+            star.classList.add("star");
+
+            star.style.left =
+                Math.random() * 100 + "%";
+
+            star.style.top =
+                Math.random() * 100 + "%";
+
+            star.style.animationDelay =
+                Math.random() * 3 + "s";
+
+            starsContainer.appendChild(star);
+        }
+
+
+        /* START SURPRISE */
+
+        function startJourney() {
+
+            document
+                .getElementById("memories")
+                .scrollIntoView({
+                    behavior: "smooth"
+                });
+
+            createHearts(20);
+        }
+
+
+        /* OPEN LOVE LETTER */
+
+        function openLetter() {
+
+            const envelope =
+                document.getElementById("envelope");
+
+            envelope.classList.toggle("open");
+
+            if (envelope.classList.contains("open")) {
+
+                createHearts(40);
+
+            }
+
+        }
+
+
+        /* CREATE FLOATING HEART */
+
+        function createHeart() {
+
+            const heart =
+                document.createElement("div");
+
+            heart.classList.add("heart");
+
+            const hearts = [
+                "❤️",
+                "💕",
+                "💗",
+                "💖",
+                "💘",
+                "💝"
+            ];
+
+            heart.innerHTML =
+                hearts[
+                    Math.floor(
+                        Math.random() * hearts.length
+                    )
+                ];
+
+            heart.style.left =
+                Math.random() * 100 + "vw";
+
+            heart.style.animationDuration =
+                4 + Math.random() * 4 + "s";
+
+            heart.style.fontSize =
+                15 + Math.random() * 25 + "px";
+
+            document.body.appendChild(heart);
+
+            setTimeout(() => {
+
+                heart.remove();
+
+            }, 8000);
+
+        }
+
+
+        /* CREATE MANY HEARTS */
+
+        function createHearts(amount) {
+
+            for (let i = 0; i < amount; i++) {
+
+                setTimeout(() => {
+
+                    createHeart();
+
+                }, i * 100);
+
+            }
+
+        }
+
+
+        /* PHOTO SCROLL ANIMATION */
+
+        const cards =
+            document.querySelectorAll(".photo-card");
+
+
+        const observer =
+            new IntersectionObserver(
+                entries => {
+
+                    entries.forEach(entry => {
+
+                        if (entry.isIntersecting) {
+
+                            entry.target.classList.add("show");
+
+                        }
+
+                    });
+
+                },
+                {
+                    threshold: 0.15
+                }
+            );
+
+
+        cards.forEach(card => {
+
+            observer.observe(card);
+
+        });
+
+
+        /* RANDOM HEARTS */
+
+        setInterval(() => {
+
+            createHeart();
+
+        }, 1800);
+
+    const music = document.getElementById("backgroundMusic");
+
+    document.addEventListener("click", () => {
+    music.play().catch(() => {});
+    }, { once: true });
+
+
+        /* SMALL INTRO VIDEO */
+        const introOverlay = document.getElementById("introVideoOverlay");
+        const introVideo = document.getElementById("introVideo");
+
+        function closeIntroVideo() {
+            introOverlay.classList.add("intro-hidden");
+
+            setTimeout(() => {
+                introOverlay.style.display = "none";
+            }, 800);
+        }
+
+        introVideo.addEventListener("ended", closeIntroVideo);
+
+        // Fallback: if the video cannot load, don't block the webpage.
+        introVideo.addEventListener("error", () => {
+            setTimeout(closeIntroVideo, 500);
+        });
+
+
+
+        /* HIDDEN PHOTO -> HEART REVEAL */
+        document.querySelectorAll(".photo-heart").forEach(heart => {
+            heart.addEventListener("click", event => {
+                event.stopPropagation();
+
+                const card = heart.closest(".photo-card");
+                card.classList.add("revealed");
+
+                heart.setAttribute("aria-label", "Photo revealed");
+            });
+        });
+
+        /* PHOTO VIEWER */
+        const photoViewer = document.getElementById("photoViewer");
+        const viewerImage = document.getElementById("viewerImage");
+        const viewerCaption = document.getElementById("viewerCaption");
+        const closePhoto = document.getElementById("closePhoto");
+        const photoCards = document.querySelectorAll(".photo-card");
+
+        function openPhoto(card) {
+            const image = card.querySelector("img");
+            const caption = card.querySelector(".photo-caption");
+
+            viewerImage.src = image.src;
+            viewerImage.alt = image.alt;
+            viewerCaption.textContent = caption.textContent.trim();
+
+            photoViewer.classList.add("active");
+            photoViewer.setAttribute("aria-hidden", "false");
+            document.body.classList.add("photo-viewer-open");
+        }
+
+        function closePhotoViewer() {
+            photoViewer.classList.remove("active");
+            photoViewer.setAttribute("aria-hidden", "true");
+            document.body.classList.remove("photo-viewer-open");
+
+            setTimeout(() => {
+                if (!photoViewer.classList.contains("active")) {
+                    viewerImage.src = "";
+                }
+            }, 350);
+        }
+
+        photoCards.forEach(card => {
+            card.addEventListener("click", () => openPhoto(card));
+
+            card.addEventListener("keydown", event => {
+                if (event.key === "Enter" || event.key === " ") {
+                    event.preventDefault();
+                    openPhoto(card);
+                }
+            });
+        });
+
+        closePhoto.addEventListener("click", closePhotoViewer);
+
+        photoViewer.addEventListener("click", event => {
+            if (event.target === photoViewer) {
+                closePhotoViewer();
+            }
+        });
+
+        document.addEventListener("keydown", event => {
+            if (event.key === "Escape" && photoViewer.classList.contains("active")) {
+                closePhotoViewer();
+            }
+        });
+
+    </script>
+
+</body>
+</html>
