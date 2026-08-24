@@ -17,6 +17,7 @@
     <div id="introVideoOverlay">
         <div class="intro-video-box">
             <video id="introVideo" autoplay muted playsinline>
+                <source src="intro-mobile.mp4" type="video/mp4" media="(max-width: 700px)">
                 <source src="intro.mp4" type="video/mp4">
             </video>
 
@@ -632,12 +633,15 @@
         }
 
         photoCards.forEach(card => {
-            card.addEventListener("click", () => openPhoto(card));
+            card.addEventListener("click", event => {
+                if (event.target.closest(".photo-heart")) return;
+                if (card.classList.contains("revealed")) openPhoto(card);
+            });
 
             card.addEventListener("keydown", event => {
                 if (event.key === "Enter" || event.key === " ") {
                     event.preventDefault();
-                    openPhoto(card);
+                    if (card.classList.contains("revealed")) openPhoto(card);
                 }
             });
         });
